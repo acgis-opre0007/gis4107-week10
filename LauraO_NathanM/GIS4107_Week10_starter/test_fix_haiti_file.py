@@ -18,9 +18,10 @@ def test_fix_code_typical_code():
     haiti_folder = os.path.dirname(os.path.abspath(__file__))
     in_csv = os.path.join(haiti_folder, "data", "haiti_admin_names.csv")
     out_csv = os.path.join(haiti_folder, "data", "haiti_admin_names_fixed.csv")
+    admin_code = 'HT12345-01'
     fixed_code = 'HT1245-01'
     expected = fixed_code
-    actual = fh._fix_code()
+    actual = fh._fix_code(admin_code)
     assert actual == expected
 
 # print (f"'old:' {admin_code} '\nnew: ' {_fix_code(admin_code)}")
