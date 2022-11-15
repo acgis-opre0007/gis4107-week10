@@ -4,7 +4,7 @@ import file_utils as fu
 
 def test_get_file_content():
     script_folder = os.path.dirname(os.path.abspath(__file__))
-
+    
     file_name = os.path.join(script_folder, "data", "demo.txt")
     expected = 'hi'
     actual = fu.get_file_content(file_name)
