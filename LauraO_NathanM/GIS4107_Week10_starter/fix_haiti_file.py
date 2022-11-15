@@ -18,6 +18,9 @@ def fix_file(in_csv, out_csv, admin_code_column_index = 0):
                                  admin_code
     """
     #haiti_folder = gis4107_week_10_starter
+    haiti_folder = os.path.dirname(os.path.abspath(__file__))
+    in_csv = os.path.join(haiti_folder, "data", "haiti_admin_names.csv")
+    out_csv = os.path.join(haiti_folder, "data", "haiti_admin_names_fixed.csv")
     with open(in_csv) as f:
         reader = csv.reader(f)
         header = next(reader)
@@ -32,6 +35,7 @@ def fix_file(in_csv, out_csv, admin_code_column_index = 0):
         writer.writerow(header)
         for admin_code in header[0]:
             writer.writerow(admin_code)
+            return admin_code
 
 def _fix_code(admin_code):
     """Returns code with 5th character removed.  For example,
